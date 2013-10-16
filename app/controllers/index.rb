@@ -32,11 +32,11 @@ get '/login_signup' do
 end
 
 post '/login' do
-  user = User.authenticate(params[:username])
-
-  if user
+  user = User.find_by_username(params[:user][:username])
+  if user.password == params[:user][:password]
     session[:user_id] = user.id
-    redirect to 'http://www.google.com'
+    session[:user_name] = user.username
+    redirect '/'
   else
     @error_login = "username or password incorrect"
     redirect '/login_signup'
@@ -56,6 +56,18 @@ post '/signup' do
   end
 
 end
+
+get '/user_profile/:id' do
+  @user = User.find_by_id(params[:id])
+
+  erb :user_profile
+end
+
+get '/logout' do
+  session.clear
+  redirect '/login_signup'
+end
+
 
 
 

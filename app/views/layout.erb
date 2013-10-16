@@ -20,6 +20,10 @@
 <!-- orange header info + login will go here -->
 <div class="navbar">
   <a href="/login_signup">login</a>
+  <a href="/logout">logout</a>
+  <% if session[:user_id] %>
+  <a href='/user_profile/<%= session[:user_id] %>'><%= session[:user_name] %></a>
+  <% end %>
 </div>
 <body>
   <%= yield %>

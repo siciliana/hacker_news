@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Login</h2><br>
 
-  <form action="/login_signup" method="get">
+  <form action="/login" method="post">
     <label>username: <input type="text" name="user[username]" placeholder="enter username"</label><br>
     <label>password: <input type="password" name="user[password]" placeholder="enter password"></label><br>
     <br>
@@ -10,10 +10,10 @@
 
   <h2>Create Account</h2><br>
 
-  <form action="/login_signup" method="post">
+  <form action="/signup" method="post">
     <label>username: <input type="text" name="user[username]" placeholder="enter username"</label><br>
     <label>password: <input type="password" name="user[password]" placeholder="enter password"></label><br>
-    <label>password confirmation: <input type="password" name="user[password_confirmation]" placeholder="enter password"></label><br>
+<!--     <label>password confirmation: <input type="password" name="user[password_confirmation]" placeholder="enter password"></label><br> -->
     <br>
     <input type="submit" value="create account">
   </form>
