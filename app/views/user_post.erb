@@ -1,0 +1,14 @@
+<div class="container">
+  <a href="<%= @post.post_url %>"><%= @post.post_title %></a><br>
+  <%= @post.post_body %><br>
+
+  <br>
+  <form action="/user_post" method="post">
+
+<!-- if user not signed in, this option below will not appear -->
+
+    <textarea cols="40" rows="5" name="comment[comment_body]" placeholder="comment"></textarea><br>
+    <br>
+    <input type="submit" value="add comment"></input>
+  </form>
+</div>

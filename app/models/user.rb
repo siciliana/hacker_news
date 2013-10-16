@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  # include BCrypt
+  include BCrypt
 
 
   # def password
