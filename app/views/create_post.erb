@@ -1,0 +1,23 @@
+<div class="container">
+
+  <h1>Submit</h1>
+
+  <form action="/create_post" method="post">
+
+    <label>title<input type="text" name="post[post_title]" placeholder="title"></label><br>
+    <br>
+
+    <label>URL<input type="text" name="post[post_url]" placeholder="URL"></label><br>
+
+    <p>or</p>
+
+    <label>text<textarea cols="40" rows="5" name="post[post_body]" placeholder="body"></textarea></label><br>
+    <br>
+
+    <input type="submit" value="submit"><br><br>
+
+    <p>Leave url blank to submit a question for discussion. If there is no url, the text (if any) will appear at the top of the comments page. If there is a url, the text will be ignored.</p>
+
+    <p>You can also submit via <a href="http://ycombinator.com/bookmarklet.html">bookmarklet.</a></p>
+  </form>
+</div>

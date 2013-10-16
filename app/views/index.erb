@@ -1,23 +1,16 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+  <h1>Hacker News</h1>
+    <h2><a href="/create_post">Create a post!</a></h2>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+  <!-- Header
+      list of all posts with user name and comment number
+      link to login & signup page
+      link to create posts page ("submit") -->
+  <ol>
+      <% @posts.each do |post| %>
+      <li><a href="<%= post.post_url %>"><%= post.post_title  %></a></li>
+      <% end %>
+
+
+  </ol>
 </div>
